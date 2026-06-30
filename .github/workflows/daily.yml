@@ -1,0 +1,12 @@
+name: Claude Agent
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hello world
+        run: echo "GitHub werkt!"
