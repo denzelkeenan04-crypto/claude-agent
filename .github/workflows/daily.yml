@@ -15,6 +15,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      id-token: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -54,3 +55,4 @@ jobs:
           claude_args: |
             --mcp-config ${{ runner.temp }}/mcp.json
             --allowedTools Read,Write,Edit,mcp__notion
+
