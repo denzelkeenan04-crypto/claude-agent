@@ -47,12 +47,18 @@ jobs:
             De taken op deze pagina zijn DAGELIJKS terugkerend.
             STAPPEN:
             1. Lees de Notion-pagina "Taken voor Claude" via de Notion MCP-tools.
-            2. Zet aan het begin ELKE taak die op "Afgerond" staat terug op
-               "Te doen", zodat alles vandaag opnieuw wordt opgepakt.
-            3. Voer daarna ELKE taak uit en maak/ververs de output in de map
-               output/ (maak die map aan als die niet bestaat). Tekst -> .md bestand.
-            4. Zet elke voltooide taak daarna op "Afgerond".
-            5. Commit alle bestanden met message "chore: dagelijkse taken".
+            2. Zet aan het begin ELKE taak die op "Afgerond" staat terug op "Te doen".
+            3. Voer daarna ELKE taak uit. Maak voor elke taak een bestand in de map
+               output/ (maak die map aan als die nog niet bestaat), bijv.
+               output/<korte-taaknaam>.md met de gevraagde tekst/inhoud. Voor
+               beeld-taken beschrijf je het ontwerp in het .md bestand.
+            4. Zet elke voltooide taak in Notion op "Afgerond".
+            5. Sla alles op in GitHub via de terminal (Bash):
+               git add -A
+               git -c user.name="Claude Bot" -c user.email="claude-bot@users.noreply.github.com" commit -m "chore: dagelijkse taken"
+               git push origin HEAD:main
+               (Als er niets te committen valt, is dat prima.)
           claude_args: |
             --mcp-config ${{ runner.temp }}/mcp.json
-            --allowedTools Read,Write,Edit,mcp__notion
+            --allowedTools Read,Write,Edit,Bash,mcp__notion
+
