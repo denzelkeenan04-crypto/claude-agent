@@ -42,6 +42,7 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          show_full_output: true
           prompt: |
             Je bent de dagelijkse automatisering voor Brandmerck.
             De taken op deze pagina zijn DAGELIJKS terugkerend.
@@ -59,6 +60,7 @@ jobs:
                git push origin HEAD:main
                (Als er niets te committen valt, is dat prima.)
           claude_args: |
+            --model claude-sonnet-4-6
             --mcp-config ${{ runner.temp }}/mcp.json
             --allowedTools Read,Write,Edit,Bash,mcp__notion
 
