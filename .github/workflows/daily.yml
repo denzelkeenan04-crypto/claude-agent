@@ -44,15 +44,15 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           prompt: |
             Je bent de dagelijkse automatisering voor Brandmerck.
+            De taken op deze pagina zijn DAGELIJKS terugkerend.
             STAPPEN:
             1. Lees de Notion-pagina "Taken voor Claude" via de Notion MCP-tools.
-            2. Zoek alle taken met status "Te doen".
-            3. Voer elke openstaande taak uit en sla de output op in de map output/
-               (maak die map aan als die niet bestaat). Tekst -> .md bestand.
-            4. Werk in Notion de status van elke afgeronde taak bij naar "Afgerond".
-            5. Commit alle nieuwe bestanden met message "chore: dagelijkse taken".
-            Als er geen taken op "Te doen" staan: doe niets en log dat.
+            2. Zet aan het begin ELKE taak die op "Afgerond" staat terug op
+               "Te doen", zodat alles vandaag opnieuw wordt opgepakt.
+            3. Voer daarna ELKE taak uit en maak/ververs de output in de map
+               output/ (maak die map aan als die niet bestaat). Tekst -> .md bestand.
+            4. Zet elke voltooide taak daarna op "Afgerond".
+            5. Commit alle bestanden met message "chore: dagelijkse taken".
           claude_args: |
             --mcp-config ${{ runner.temp }}/mcp.json
             --allowedTools Read,Write,Edit,mcp__notion
-
