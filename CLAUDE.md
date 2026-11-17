@@ -10,5 +10,6 @@ Opbouw:
 - Hoofdstukken (`<section class="hoofdstuk" id="…">`, volgorde in `c`): einddoel (S), werking (architectuur-stack staat hardcoded in functie R + T, k, w), agents (C), linkedin (functie Q, data inline), werkwijzen ($), data (y), veiligheid (I), keuze (v: advies, vertaling, onderdelen met kostenClaude/kostenChatgpt, checken, bronnen), modellen (d), bouwen (f: fases met stappen), naslag (A, m, z, E).
 - Architectuur: Jij → AI Marketing Director (platform nog open: Claude of ChatGPT) → Growth-agents BE en DE → 6 gedeelde specialisten → koppelingen (Windsor.ai, MailBlue, Leadinfo & Forms, Zapier & CRM) → kwaliteitscontrole & goedkeuring.
 - Eerste toepassing: LinkedIn-reactievoorstellen bij posts van anderen; AI plaatst nooit zelf.
+- Beginnershoofdstukken: aan-de-slag (functie U, 7 stappen LinkedIn) en handleiding (functie X, delen A–E met kopieerbare sjablonen via kb()). Kopieerknoppen: data-kopieer="<id van pre>".
 
 Na een aanpassing: render met Playwright (check JS-fouten en 400px-breedte), stuur Denzel het bestand, en commit + push alleen als hij dat vraagt.
